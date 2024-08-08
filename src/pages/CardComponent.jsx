@@ -72,36 +72,36 @@ const ImageContainer = styled.div`
 `;
 
 const Image = styled.img`
-  width: 150px; // Adjusted width to be smaller
+  width: 150px; 
   height: auto;
   margin-bottom: 20px;
 
   @media (max-width: 480px) {
-    width: 130px; // Smaller on mobile screens
+    width: 130px; 
   }
 `;
 
 const Title = styled.h2`
   font-family: 'Roboto', sans-serif;
-  font-size: 22px; // Slightly reduced from 24px for better fit
+  font-size: 22px; 
   font-weight: 700;
   color: #0029BD;
 
   @media (max-width: 480px) {
-    font-size: 20px; // Smaller on mobile screens
+    font-size: 20px; 
   }
 `;
 
 const Description = styled.p`
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
-  font-size: 15px; // Reduced size for better readability
+  font-size: 15px;
   color: #313131CC;
   margin-top: 10px;
-  line-height: 1.4; // Slightly adjusted line height
+  line-height: 1.4; 
 
   @media (max-width: 480px) {
-    font-size: 14px; // Smaller on mobile screens
+    font-size: 14px; 
   }
 `;
 
