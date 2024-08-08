@@ -23,41 +23,39 @@ const component3 = () => {
     border: '2px solid #FFFFFF',
     borderRadius: '40px',
     boxShadow: '0px 0px 20px rgba(0, 0, 0, 0.05)',
-    width: '632px',
-    height: 'auto',
-    backgroundColor: 'rgba(255, 255, 255, 0.35)',
+    width: '632px', // 카드의 고정 너비 설정
+    height: 'auto', // 카드의 고정 높이 설정 제거
+    backgroundColor: 'rgba(255, 255, 255, 0.35)', // 카드 배경색 설정
     textAlign: 'left',
-    position: 'relative',
-    backdropFilter: 'blur(25px)',
+    position: 'relative', // 카드 컨테이너를 기준으로 절대 위치 설정
+    backdropFilter: 'blur(25px)', // backdrop-filter 설정
     boxSizing: 'border-box',
-    flexDirection: 'column',
   };
 
   const cardStyle1 = {
     ...cardStyle,
-    marginRight: '380px',
+    marginRight: '380px', // 첫 번째 카드 왼쪽으로 이동
   };
 
   const cardStyle2 = {
     ...cardStyle,
-    marginLeft: '380px',
-    order: 1,
+    marginLeft: '380px', // 두 번째 카드 오른쪽으로 이동
   };
 
   const cardStyle3 = {
     ...cardStyle,
-    marginRight: '380px',
+    marginRight: '380px', // 세 번째 카드 왼쪽으로 이동
   };
 
   const textContainerStyle = {
     flex: 1,
-    position: 'relative',
-    zIndex: 1,
+    position: 'relative', // 텍스트 컨테이너를 기준으로 절대 위치 설정
+    zIndex: 1, // 텍스트가 그라데이션 원 위에 오도록 설정
   };
 
   const headingStyle = {
     fontSize: '0.875rem',
-    color: '#3B82F6',
+    color: '#3B82F6', // Heading color
     marginBottom: '-1.5rem',
     marginLeft: '0.15rem',
     fontWeight: 900,
@@ -68,24 +66,24 @@ const component3 = () => {
     fontFamily: 'Roboto',
     fontSize: '2.25rem',
     fontWeight: 900,
-    color: '#1F2937',
-    marginBottom: '2rem',
+    color: '#1F2937', // Subheading color
+    marginBottom: '2.rem',
   };
 
   const highlightedTextStyle = {
-    color: '#325EFF',
+    color: '#325EFF', // 특정 부분만 파란색으로 설정
   };
 
   const paragraphStyle = {
     fontFamily: 'Roboto',
     fontSize: '1.125rem',
-    color: '#6B7280',
+    color: '#6B7280', 
     lineHeight: '1.75rem',
   };
 
   const imageStyle = {
-    width: '390px',
-    height: 'auto',
+    width: '390px', // 이미지의 너비 조정
+    height: '809px', // 이미지의 높이 조정
     objectFit: 'cover',
     borderRadius: '10px',
     position: 'absolute',
@@ -93,18 +91,17 @@ const component3 = () => {
 
   const image1Style = {
     ...imageStyle,
-    right: '-420px',
+    right: '-420px', // 첫 번째 박스 오른쪽에 배치
   };
 
   const image2Style = {
     ...imageStyle,
-    left: '-420px',
-    order: 2,
+    left: '-420px', // 두 번째 박스 왼쪽에 배치
   };
 
   const image3Style = {
     ...imageStyle,
-    right: '-420px',
+    right: '-420px', // 세 번째 박스 오른쪽에 배치
   };
 
   const gradientStyle1 = {
@@ -154,7 +151,7 @@ const component3 = () => {
         left: 0 !important;
         margin-bottom: 20px;
         width: 100% !important;
-        max-width: 300px !important;
+        max-width: 350px !important;
       }
       .gradientStyle1, .gradientStyle2, .gradientStyle3 {
         width: 200px !important;
