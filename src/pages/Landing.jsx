@@ -43,8 +43,7 @@ const Container = styled.div`
   align-items: center;
   font-family: Arial, sans-serif;
   width: 100vw;
-  height: 100vh;
-  height: 100dvh;  
+  height: 100vh; 
 `;
 
 const Header = styled.header`
