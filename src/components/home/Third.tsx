@@ -1,5 +1,52 @@
 'use client';
-import React from 'react';
+import { motion, useInView } from 'framer-motion';
+import React, { ReactNode, useRef } from 'react';
+
+interface BouncySectionType {
+  children: ReactNode;
+  delay: number;
+  direction?: 'up' | 'down' | 'left' | 'right';
+}
+
+const BouncySection2 = ({ children, delay = 0, direction = 'up' }: BouncySectionType) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
+  const getInitialPosition = () => {
+    switch (direction) {
+      case 'up':
+        return { y: 50 };
+      case 'down':
+        return { y: -50 };
+      case 'left':
+        return { x: 50 };
+      case 'right':
+        return { x: -50 };
+      default:
+        return { y: 50 };
+    }
+  };
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, scale: 0.8, ...getInitialPosition() }}
+      animate={{
+        opacity: isInView ? 1 : 0,
+        scale: isInView ? 1 : 0.8,
+        x: isInView ? 0 : getInitialPosition().x,
+        y: isInView ? 0 : getInitialPosition().y
+      }}
+      transition={{
+        type: 'spring',
+        stiffness: 300,
+        damping: 20,
+        delay: isInView ? delay : 0
+      }}>
+      {children}
+    </motion.div>
+  );
+};
 
 const Third = () => {
   return (
@@ -10,68 +57,76 @@ const Third = () => {
           건전하고 간편한 운동 약속
         </div>
         {/* 첫번째 */}
-        <div className="flex items-center gap-[140px] mt-[110px]">
-          <div className="px-[50px] pt-5 pb-10 rounded-[20px] bg-white shadow-md flex flex-col items-center">
-            <img src="/images/coin.svg" alt="" />
-            <img src="/images/third_shadow.svg" alt="" />
+        <BouncySection2 delay={0.2} direction="up">
+          <div className="flex items-center gap-[140px] mt-[110px]">
+            <div className="px-[50px] pt-5 pb-10 rounded-[20px] bg-white shadow-md flex flex-col items-center">
+              <img src="/images/coin.svg" alt="" />
+              <img src="/images/third_shadow.svg" alt="" />
+            </div>
+            <div>
+              <div className="text-[#313131] text-[36px] font-semibold">
+                <span className="text-[#325EFF]">보증금</span> 시스템
+              </div>
+              <div className="mt-[30px] text-[20px] font-normal text-gray-500">
+                보증금 지불 후 약속에 참여하며 약속이 끝난 후 보증금은 반환
+              </div>
+              <div className="text-[20px] font-normal text-gray-500">
+                됩니다. 단, 노쇼 및 불건전한 만남 등의 문제 발생 시 보증금은
+              </div>
+              <div className="text-[20px] font-normal text-gray-500">
+                반환되지 않습니다. 보증금 시스템으로 건전하고 안전한 운동
+              </div>
+              <div className="text-[20px] font-normal text-gray-500">
+                약속 문화를 형성합니다.
+              </div>
+            </div>
           </div>
-          <div>
-            <div className="text-[#313131] text-[36px] font-semibold">
-              <span className="text-[#325EFF]">보증금</span> 시스템
-            </div>
-            <div className="mt-[30px] text-[20px] font-normal text-gray-500">
-              보증금 지불 후 약속에 참여하며 약속이 끝난 후 보증금은 반환
-            </div>
-            <div className="text-[20px] font-normal text-gray-500">
-              됩니다. 단, 노쇼 및 불건전한 만남 등의 문제 발생 시 보증금은
-            </div>
-            <div className="text-[20px] font-normal text-gray-500">
-              반환되지 않습니다. 보증금 시스템으로 건전하고 안전한 운동
-            </div>
-            <div className="text-[20px] font-normal text-gray-500">
-              약속 문화를 형성합니다.
-            </div>
-          </div>
-        </div>
+        </BouncySection2>
         {/* 두번째 */}
-        <div className="flex items-center gap-[140px] mt-[90px]">
-          <div>
-            <div className="text-[#313131] text-[36px] font-semibold">
-              <span className="text-[#325EFF]">지도 기반</span> 서비스
+        <BouncySection2 delay={0.4} direction="up">
+          <div className="flex items-center gap-[140px] mt-[110px]">
+            <div>
+              <div className="text-[#313131] text-[36px] font-semibold">
+                <span className="text-[#325EFF]">지도 기반</span> 서비스
+              </div>
+              <div className="mt-[30px] text-[20px] font-normal text-gray-500">
+                지도 상에 사용자가 직접 선호하는 장소 및 시간에 운동을 함께
+              </div>
+              <div className="text-[20px] font-normal text-gray-500">
+                할 파트너 모집 및 약속 참여가 가능합니다. 직관적인 지도 기반
+              </div>
+              <div className="text-[20px] font-normal text-gray-500">
+                서비스로 진행 중인 약속을 한눈에 파악 가능합니다.
+              </div>
             </div>
-            <div className="mt-[30px] text-[20px] font-normal text-gray-500">
-              지도 상에 사용자가 직접 선호하는 장소 및 시간에 운동을 함께
-            </div>
-            <div className="text-[20px] font-normal text-gray-500">
-              할 파트너 모집 및 약속 참여가 가능합니다. 직관적인 지도 기반
-            </div>
-            <div className="text-[20px] font-normal text-gray-500">
-              서비스로 진행 중인 약속을 한눈에 파악 가능합니다.
+
+            <div className="px-[50px] pt-5 pb-10 rounded-[20px] bg-white shadow-md flex flex-col items-center">
+              <img src="/images/location.svg" alt="" />
+              <img src="/images/third_shadow.svg" alt="" />
             </div>
           </div>
-          <div className="px-[50px] pt-5 pb-10 rounded-[20px] bg-white shadow-md flex flex-col items-center">
-            <img src="/images/location.svg" alt="" />
-            <img src="/images/third_shadow.svg" alt="" />
-          </div>
-        </div>
+        </BouncySection2>
         {/* 세 번쨰 */}
-        <div className="flex items-center gap-[140px] mt-[110px]">
-          <div className="px-[50px] pt-5 pb-10 rounded-[20px] bg-white shadow-md flex flex-col items-center">
-            <img src="/images/trophy.svg" alt="" />
-            <img src="/images/third_shadow.svg" alt="" />
+        <BouncySection2 delay={0.6} direction="up">
+          <div className="flex items-center gap-[140px] mt-[110px]">
+            <div className="px-[50px] pt-5 pb-10 rounded-[20px] bg-white shadow-md flex flex-col items-center">
+              <img src="/images/trophy.svg" alt="" />
+              <img src="/images/third_shadow.svg" alt="" />
+            </div>
+
+            <div>
+              <div className="text-[#313131] text-[36px] font-semibold">
+                <span className="text-[#325EFF]">AI 자동 생성</span> 운동 약속
+              </div>
+              <div className="mt-[30px] text-[20px] font-normal text-gray-500">
+                AI 기반으로 자동으로 운동 약속이 생성되며 ‘스포팅’ AI 자동
+              </div>
+              <div className="text-[20px] font-normal text-gray-500">
+                생성 운동 약속의 참가자는 포인트 리워드를 받을 수 있습니다.
+              </div>
+            </div>
           </div>
-          <div>
-            <div className="text-[#313131] text-[36px] font-semibold">
-              <span className="text-[#325EFF]">AI 자동 생성</span> 운동 약속
-            </div>
-            <div className="mt-[30px] text-[20px] font-normal text-gray-500">
-              AI 기반으로 자동으로 운동 약속이 생성되며 ‘스포팅’ AI 자동
-            </div>
-            <div className="text-[20px] font-normal text-gray-500">
-              생성 운동 약속의 참가자는 포인트 리워드를 받을 수 있습니다.
-            </div>
-          </div>
-        </div>
+        </BouncySection2>
         <img
           src="/images/second_blue.svg"
           alt=""
