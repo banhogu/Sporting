@@ -46,7 +46,7 @@ const HomeIndex = () => {
   }, []);
 
   return (
-    <div>
+    <div className=" sm:mt-[30px] overflow-x-hidden">
       <Top />
       <Second />
       <Third />
