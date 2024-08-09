@@ -1,8 +1,10 @@
 'use client';
+import { useModalStore } from '@/store/modal.store';
 import React from 'react';
 import { IoLogoApple } from 'react-icons/io5';
 
 const Top = () => {
+  const { setModalType, setOpen } = useModalStore();
   return (
     <div className="relative">
       <img src="/images/bg1.svg" alt="" className="absolute top-[300px]" />
@@ -25,14 +27,24 @@ const Top = () => {
       </div>
 
       <div className="flex justify-center items-center gap-[30px] mt-[52px]">
-        <div className="shadow-sm cursor-pointer w-[246px] h-[65px] rounded-xl flex items-center justify-center gap-[10px] bg-gray-900 text-xl text-white font-bold ">
+        <div
+          onClick={() => {
+            setOpen(true);
+            setModalType('prepare');
+          }}
+          className="shadow-sm cursor-pointer w-[246px] h-[65px] rounded-xl flex items-center justify-center gap-[10px] bg-gray-900 text-xl text-white font-bold ">
           <div>
             <IoLogoApple color="white" size={30} />
           </div>
           <div>App Store</div>
         </div>
 
-        <div className="shadow-sm cursor-pointer w-[246px] h-[65px] rounded-xl flex items-center justify-center gap-[10px] bg-gray-900 text-xl text-white font-bold">
+        <div
+          onClick={() => {
+            setOpen(true);
+            setModalType('prepare');
+          }}
+          className="shadow-sm cursor-pointer w-[246px] h-[65px] rounded-xl flex items-center justify-center gap-[10px] bg-gray-900 text-xl text-white font-bold">
           <div>
             <img src="/images/playstore.png" alt="playstore" className="w-6" />
           </div>
