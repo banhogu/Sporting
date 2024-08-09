@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import PhoneImageSrc from '../img/Hero.png'; 
+import PhoneImageSrc from '../img/Hero.png';
 import AppstoreImageSrc from '../img/Appstore.png';
 
 function HeroSection() {
@@ -8,7 +8,7 @@ function HeroSection() {
 
   const handleAppstoreClick = () => {
     setIsClicked(true);
-    setTimeout(() => setIsClicked(false), 3000);//3초 뒤에 닫기
+    setTimeout(() => setIsClicked(false), 3000); 
   };
 
   return (
@@ -23,7 +23,11 @@ function HeroSection() {
         </ColorText>
       </TextContainer>
       <AppButtonsContainer>
-        <AppstoreImage src={AppstoreImageSrc} alt="appstore img" onClick={handleAppstoreClick} />
+        <AppstoreImage
+          src={AppstoreImageSrc}
+          alt="appstore img"
+          onClick={handleAppstoreClick}
+        />
       </AppButtonsContainer>
       {isClicked && <Message>아직 준비 중입니다.</Message>}
     </HeroContainer>
@@ -31,7 +35,7 @@ function HeroSection() {
 }
 
 const HeroContainer = styled.div`
-  position: relative; 
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -42,39 +46,38 @@ const HeroContainer = styled.div`
   overflow: hidden;
 
   @media (max-width: 1024px) {
-    height: auto; 
-    flex-direction: row;
-  }
+    flex-direction: column; 
 
-  @media (max-width: 480px) {
-    height: auto; 
-    flex-direction: column;
+  @media (max-width: 480px){
+    flex-direction : column;
   }
-  
 `;
+
 const Gradient1 = styled.div`
   position: absolute;
   width: 591px;
   height: 521px;
   border-radius: 50%;
-  background: radial-gradient(50% 50% at 50% 50%, rgba(200, 50, 255, 0.25) 0%, rgba(241, 241, 241, 0.25) 70%);
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(200, 50, 255, 0.25) 0%,
+    rgba(241, 241, 241, 0.25) 70%
+  );
   top: 150px;
   left: -250px;
 
   @media (max-width: 1024px) {
-    position: relative;
-    width: 300px;
-    height: 900px;
-    top: 200px;
-    left: -400px;
+    width: 450px;
+    height: 450px;
+    top: 50px;
+    left: -200px;
   }
 
   @media (max-width: 480px) {
-    position: absolute;
-    width: 450px;
-    height: 450px;
-    top: 40px;
-    left: -300px;
+    width: 350px;
+    height: 350px;
+    top: 30px;
+    left: -150px;
   }
 `;
 
@@ -83,16 +86,26 @@ const Gradient2 = styled.div`
   width: 556px;
   height: 521px;
   border-radius: 50%;
-  background: radial-gradient(50% 50% at 50% 50%, rgba(50, 94, 255, 0.25) 0%, rgba(241, 241, 241, 0.25) 70%);
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(50, 94, 255, 0.25) 0%,
+    rgba(241, 241, 241, 0.25) 70%
+  );
   top: 0px;
   right: -220px;
 
-  @media (max-width: 480px) {
-    position: absolute;
+  @media (max-width: 1024px) {
     width: 450px;
     height: 450px;
-    top: -200px;
+    top: -100px;
     right: -200px;
+  }
+
+  @media (max-width: 480px) {
+    width: 350px;
+    height: 350px;
+    top: -150px;
+    right: -150px;
   }
 `;
 
@@ -100,15 +113,21 @@ const TextContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
+  position: relative; 
+  flex-direction: column;
+
+  @media (min-width: 1024px) {
+    flex-direction: row;
+  }
 
   @media (max-width: 1024px) {
-    width: 100%; 
+    width: 100%;
     padding: 15px;
   }
 
   @media (max-width: 480px) {
-    width: 90%; 
+    width: 90%;
   }
 `;
 
@@ -120,18 +139,18 @@ const Text = styled.span`
   color: #313131;
 
   @media (max-width: 1024px) {
-    font-size: 50px; 
+    font-size: 30px;
   }
 
   @media (max-width: 480px) {
-    font-size: 40px; 
+    font-size: 20px;
   }
 `;
 
 const ColorText = styled(Text)`
-  color: #325eff; 
+  color: #325eff;
   span {
-    color: #313131; 
+    color: #313131;
   }
 `;
 
@@ -139,15 +158,13 @@ const PhoneImage = styled.img`
   height: auto;
   max-height: 300px;
 
-  @media (max-width: 1024px) {
-    height: auto;
-    max-height: 100px;
+  @media (max-width: 800px) {
+    max-height: 200px;
   }
 
   @media (max-width: 480px) {
-    width:100px;
+    max-height: 100px;
   }
-
 `;
 
 const AppButtonsContainer = styled.div`
@@ -157,32 +174,28 @@ const AppButtonsContainer = styled.div`
 `;
 
 const AppstoreImage = styled.img`
-  width: 500px;
+  width: 400px;
   height: auto;
   margin-top: 10px;
 
   @media (max-width: 1024px) {
-    height:auto;
-    width: 200px;
-    flex-dirextion: row;
-  }
-  
-  @media (max-width: 480px) {
-    height:auto;
     width: 300px;
-    margin-bottom:20px;
-    flex-dirextion: row;
+  }
+
+  @media (max-width: 480px) {
+    width: 200px;
+    margin-bottom: 20px;
   }
 `;
 
 const Message = styled.div`
   position: absolute;
-  top: 50%; 
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 10px;
   background-color: white;
-  border: 1px solid #F5F5F5;
+  border: 1px solid #f5f5f5;
   z-index: 10;
 `;
 
