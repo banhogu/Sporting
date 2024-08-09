@@ -1,8 +1,13 @@
 import Introduce from '../components/introduce';
+import ReviewSlider from '../components/comonent6';
 
 function Landing() {
   return (
-    <Introduce />
+    <>
+      <ReviewSlider />
+      <Introduce />
+    </>
+
   );
 }
 
