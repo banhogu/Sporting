@@ -33,8 +33,8 @@ const PrepareModal = () => {
               <div className="mt-5 text-[22px] font-bold text-gray-800 flex justify-center">
                 아직 서비스가 준비중이에요
               </div>
-              <div className="flex flex-col items-center mt-2  text-gray400">
-                <div className="text-md font-[500]">빠른 시일내에 만나요!</div>
+              <div className="flex flex-col items-center mt-2  text-gray-500">
+                <div className="text-md font-[600]">빠른 시일내에 만나요!</div>
               </div>
               <div className="flex items-center justify-center mt-[28px]">
                 <div
