@@ -59,12 +59,12 @@ const Fourth = () => {
       {/* 모집하기 */}
       {category === 'recruit' && (
         <div className="bg-gradient">
-          <Section delay={0.5}>
+          <Section delay={0.3}>
             <div className="mt-[100px] flex items-center justify-center text-[50px] text-gray-900 font-bold">
               스포팅 이용 방법
             </div>
           </Section>
-          <Section delay={1}>
+          <Section delay={0.6}>
             <div className="flex items-center gap-[70px] justify-center mt-[110px] ">
               <div className="flex flex-col items-center -mt-8">
                 <div className="w-4 h-4 bg-[#C7D3FF] rounded-full" />
@@ -135,12 +135,12 @@ const Fourth = () => {
       {/* 참여하기 */}
       {category === 'participation' && (
         <div className="bg-gradient">
-          <Section delay={0.5}>
+          <Section delay={0.3}>
             <div className="mt-[100px] flex items-center justify-center text-[50px] text-gray-900 font-bold">
               스포팅 이용 방법
             </div>
           </Section>
-          <Section delay={1}>
+          <Section delay={0.6}>
             <div className="flex items-center gap-[30px] justify-center mt-[110px] ">
               <div className="flex flex-col items-center -mt-3">
                 <div className="w-4 h-4 bg-[#C7D3FF] rounded-full" />

@@ -83,7 +83,7 @@ const Third = () => {
           </div>
         </BouncySection2>
         {/* 두번째 */}
-        <BouncySection2 delay={0.4} direction="up">
+        <BouncySection2 delay={0.2} direction="up">
           <div className="flex items-center gap-[140px] mt-[110px]">
             <div>
               <div className="text-[#313131] text-[36px] font-semibold">
@@ -107,7 +107,7 @@ const Third = () => {
           </div>
         </BouncySection2>
         {/* 세 번쨰 */}
-        <BouncySection2 delay={0.6} direction="up">
+        <BouncySection2 delay={0.2} direction="up">
           <div className="flex items-center gap-[140px] mt-[110px]">
             <div className="px-[50px] pt-5 pb-10 rounded-[20px] bg-white shadow-md flex flex-col items-center">
               <img src="/images/trophy.svg" alt="" />

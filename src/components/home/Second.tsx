@@ -33,7 +33,7 @@ const Second = () => {
   return (
     <div className="bg-[#F0F0F0] -mt-1 overflow-hidden">
       {/* 첫번째 */}
-      <Section delay={0.3}>
+      <Section delay={0.2}>
         <div className="flex items-center justify-center gap-[17px] max-h-max">
           <div className="relative px-[45px] py-[41px] bg-gray-50 border-2 border-white shadow-lg rounded-[24px]">
             <div className="text-[16px] font-normal text-[#325EFF]">SPORTING 1</div>
@@ -64,7 +64,7 @@ const Second = () => {
       </Section>
 
       {/* 두 번째 */}
-      <Section delay={0.4}>
+      <Section delay={0.2}>
         <div className="flex items-center justify-center gap-[17px] max-h-max">
           <div className="-mt-[100px] ">
             <img src="/images/second2.svg" alt="" />
@@ -97,7 +97,7 @@ const Second = () => {
       </Section>
 
       {/* 세 번째 */}
-      <Section delay={0.5}>
+      <Section delay={0.2}>
         <div className="flex items-center justify-center gap-[17px] max-h-max">
           <div className="relative px-[45px] py-[41px] bg-gray-50 border-2 border-white shadow-lg rounded-[24px]">
             <div className="text-[16px] font-normal text-[#325EFF]">SPORTING 1</div>
