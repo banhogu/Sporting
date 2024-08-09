@@ -18,7 +18,9 @@ function HeroSection() {
       <TextContainer>
         <Text>건강한 만남,</Text>
         <PhoneImage src={PhoneImageSrc} alt="hero img" />
-        <ColorText>함께 운동</ColorText><Text>하세요</Text>
+        <ColorText>
+          함께 운동 <span>하세요</span>
+        </ColorText>
       </TextContainer>
       <AppButtonsContainer>
         <AppstoreImage src={AppstoreImageSrc} alt="appstore img" onClick={handleAppstoreClick} />
@@ -41,8 +43,14 @@ const HeroContainer = styled.div`
 
   @media (max-width: 1024px) {
     height: auto; 
+    flex-direction: row;
+  }
+
+  @media (max-width: 480px) {
+    height: auto; 
     flex-direction: column;
   }
+  
 `;
 const Gradient1 = styled.div`
   position: absolute;
@@ -54,8 +62,8 @@ const Gradient1 = styled.div`
   left: -250px;
 
   @media (max-width: 1024px) {
-    position: absolute;
-    width: 900px;
+    position: relative;
+    width: 300px;
     height: 900px;
     top: 200px;
     left: -400px;
@@ -84,7 +92,7 @@ const Gradient2 = styled.div`
     width: 450px;
     height: 450px;
     top: -200px;
-    right: -250px;
+    right: -200px;
   }
 `;
 
@@ -121,15 +129,19 @@ const Text = styled.span`
 `;
 
 const ColorText = styled(Text)`
-  color: #325EFF;
+  color: #325eff; 
+  span {
+    color: #313131; 
+  }
 `;
 
 const PhoneImage = styled.img`
   height: auto;
-  max-height: 500px;
+  max-height: 300px;
 
   @media (max-width: 1024px) {
     height: auto;
+    max-height: 100px;
   }
 
   @media (max-width: 480px) {
@@ -151,13 +163,15 @@ const AppstoreImage = styled.img`
 
   @media (max-width: 1024px) {
     height:auto;
-    width: 400px;
+    width: 200px;
+    flex-dirextion: row;
   }
-
+  
   @media (max-width: 480px) {
     height:auto;
     width: 300px;
     margin-bottom:20px;
+    flex-dirextion: row;
   }
 `;
 
