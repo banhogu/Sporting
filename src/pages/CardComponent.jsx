@@ -61,7 +61,7 @@ const Card = styled.div`
   }
 
   @media (max-width: 480px) {
-    width: 95%; 
+    width: 80%; 
     padding: 10px;
   }
 `;
@@ -69,6 +69,7 @@ const Card = styled.div`
 const ImageContainer = styled.div`
   display: flex;
   justify-content: flex-end;
+  
 `;
 
 const Image = styled.img`
@@ -77,7 +78,7 @@ const Image = styled.img`
   margin-bottom: 20px;
 
   @media (max-width: 480px) {
-    width: 130px; 
+    width: 90px; 
   }
 `;
 
