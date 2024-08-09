@@ -4,6 +4,7 @@ import './globals.css';
 import QueryProvider from '@/providers/QueryProvider';
 import ModalProvider from '@/providers/ModalProvider';
 import Gnb from '@/components/common/Gnb';
+import Footer from '@/components/common/Footer';
 
 const pretendard = localFont({
   src: '../static/fonts/PretendardVariable.woff2',
@@ -24,6 +25,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <QueryProvider>
           <Gnb />
           {children}
+          <Footer />
           <ModalProvider />
           <div id="root-portal"></div>
         </QueryProvider>
