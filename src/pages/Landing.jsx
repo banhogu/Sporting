@@ -1,12 +1,16 @@
 import Introduce from '../components/introduce';
 import CardComponent from './pages/CardComponent';
 import Hero from './pages/Hero';
+import ReviewSlider from '../components/comonent6';
 
 function Landing() {
   return (
+<>
     <Hero/>
+    <ReviewSlider />
     <Introduce />
-  );
+</>  
+);
 }
 
 const Header = styled.header`
