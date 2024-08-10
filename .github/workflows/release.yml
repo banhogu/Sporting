@@ -11,7 +11,11 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v3
+    - uses: actions/checkout@v3
+    - run: |
+        git config --global user.name ${{ secrets.GIT_USERNAME }}
+        git config --global user.name ${{ secrets.GIT_USERMAIL }}
+
 
     - name: Set up Node.js
       uses: actions/setup-node@v3
