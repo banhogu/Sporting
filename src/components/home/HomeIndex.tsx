@@ -25,6 +25,10 @@ const HomeIndex = () => {
   const [showToTop, setShowToTop] = useState(false);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     if (open) {
       disablePageScroll();
     } else {

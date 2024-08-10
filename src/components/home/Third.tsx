@@ -1,12 +1,7 @@
 'use client';
+import { BouncySectionType } from '@/types/section.type';
 import { motion, useInView } from 'framer-motion';
 import React, { ReactNode, useRef } from 'react';
-
-interface BouncySectionType {
-  children: ReactNode;
-  delay: number;
-  direction?: 'up' | 'down' | 'left' | 'right';
-}
 
 const BouncySection2 = ({ children, delay = 0, direction = 'up' }: BouncySectionType) => {
   const ref = useRef(null);
@@ -41,7 +36,8 @@ const BouncySection2 = ({ children, delay = 0, direction = 'up' }: BouncySection
         type: 'spring',
         stiffness: 300,
         damping: 20,
-        delay: isInView ? delay : 0
+        delay: isInView ? delay : 0,
+        duration: 0.5
       }}>
       {children}
     </motion.div>

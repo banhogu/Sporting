@@ -9,7 +9,8 @@ const config: Config = {
   theme: {
     extend: {
       backgroundImage: {
-        gradient: 'linear-gradient(180deg, #FFF 0%, #EAF3FF 100%)'
+        gradient: 'linear-gradient(180deg, #FFF 0%, #EAF3FF 100%)',
+        'hero-pattern': "url('/images/basket.svg')"
       }
     }
   },

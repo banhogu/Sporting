@@ -14,7 +14,7 @@ const PrepareModal = () => {
   useOnClickOutside(ref, () => setOpen(false));
 
   return (
-    <div className="fixed inset-0 bg-gray-600 bg-opacity-30 z-50 flex justify-center items-start">
+    <div className="fixed inset-0 bg-gray-600 bg-opacity-30 z-[9999] flex justify-center items-start">
       <div
         ref={ref}
         className=" absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 ">

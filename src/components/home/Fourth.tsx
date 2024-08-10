@@ -1,13 +1,9 @@
 'use client';
 import React, { ReactNode, useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
+import { SectionType } from '@/types/section.type';
 
-interface Section {
-  children: ReactNode;
-  delay: number;
-}
-
-const Section = ({ children, delay = 0 }: Section) => {
+const Section = ({ children, delay = 0 }: SectionType) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
@@ -34,10 +30,12 @@ const Fourth = () => {
 
   return (
     <div>
-      <div className="sm:py-[25px] sm:bg-gray-50">
+      <div className="sm:py-[25px] bg-gray-100 sm:bg-gray-50">
         <div className="pt-6 sm:pt-0 flex items-center justify-center text-[#325EFF] text-[26px] sm:text-[22px] font-bold">
           How to use
         </div>
+
+        {/* 데스크톱 */}
         <div className="hidden sm:flex items-center justify-center gap-5 sm:gap-[55px] my-[12px] sm:my-[40px]">
           <div
             onClick={() => setCategory('recruit')}
@@ -54,6 +52,7 @@ const Fourth = () => {
             운동 약속 참여하기
           </div>
         </div>
+        {/* 모바일 */}
         <div className="flex sm:hidden mt-2">
           <div
             onClick={() => setCategory('recruit')}

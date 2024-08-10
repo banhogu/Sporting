@@ -2,12 +2,12 @@
   "root": true,
   "env": {
     "browser": true,
-    "es2020": true
+    "es2020": true,
+    "node": true
   },
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:react-hooks/recommended",
     "next",
     "next/core-web-vitals"
   ],
@@ -25,12 +25,7 @@
       }
     ],
 
-    "no-unused-vars": "warn",
+    "no-unused-vars": "off",
     "react/jsx-pascal-case": "warn"
-  },
-  "globals": {
-    "importScripts": "readonly",
-    "firebase": "readonly",
-    "clients": "readonly"
   }
 }
