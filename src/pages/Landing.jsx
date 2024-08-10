@@ -1,12 +1,14 @@
 import Introduce from '../components/introduce';
-import CardComponent from './pages/CardComponent';
-import Hero from './pages/Hero';
+import Hero from '../components/Hero';
+import CardComponent from '../components/CardComponent';
 import ReviewSlider from '../components/comonent6';
+import styled from "styled-components";
 
 function Landing() {
   return (
 <>
     <Hero/>
+    <CardComponent/>
     <ReviewSlider />
     <Introduce />
 </>  
