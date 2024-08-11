@@ -16,13 +16,13 @@ const pretendard = localFont({
 
 /* eslint-disable react-refresh/only-export-components*/
 export const metadata: Metadata = {
-  title: 'Sporting',
+  title: 'Sporting | 건강한 만남, 함께 운동하세요',
   description: '건강한 만남, 함께 운동하세요',
   icons: {
     icon: '/logo.svg'
   },
   openGraph: {
-    title: 'Sporting',
+    title: 'Sporting ',
     description: '건강한 만남, 함께 운동하세요',
     url: 'https://spoting-2oyi.vercel.app/',
     siteName: 'Sporting',

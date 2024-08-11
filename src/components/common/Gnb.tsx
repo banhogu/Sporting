@@ -1,7 +1,7 @@
 'use client';
 import { useNavStore } from '@/store/nav.store';
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 
@@ -9,6 +9,7 @@ const Gnb = () => {
   const { currentNav, setCurrentNav } = useNavStore();
   const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   const handleMenuToggle = () => setIsMenuOpen((prev) => !prev);
   return (
@@ -26,23 +27,32 @@ const Gnb = () => {
       {/* Desktop Menu */}
       <div className="hidden md:flex items-center gap-[18px] text-[19px]">
         <div
-          onClick={() => setCurrentNav('home')}
+          onClick={() => {
+            setCurrentNav('home');
+            router.replace('/');
+          }}
           className={`px-3 py-2 flex justify-center items-center cursor-pointer font-[700]
-          ${currentNav === 'home' ? 'text-black' : 'text-gray-600 font-[500]'}
+          ${pathname === '/' && currentNav === 'home' ? 'text-black' : 'text-gray-600 font-[500]'}
         `}>
           Home
         </div>
         <div
-          onClick={() => setCurrentNav('company')}
+          onClick={() => {
+            setCurrentNav('company');
+            router.replace('/');
+          }}
           className={`px-3 py-2 flex justify-center items-center cursor-pointer font-[800]
-          ${currentNav === 'company' ? 'text-black' : 'text-gray-600 font-[500]'}
+          ${pathname === '/' && currentNav === 'company' ? 'text-black' : 'text-gray-600 font-[500]'}
         `}>
           Company
         </div>
         <div
-          onClick={() => setCurrentNav('center')}
+          onClick={() => {
+            setCurrentNav('center');
+            router.replace('/');
+          }}
           className={`px-3 py-2 flex justify-center items-center cursor-pointer font-[800]
-          ${currentNav === 'center' ? 'text-black' : 'text-gray-600 font-[500]'}
+          ${pathname === '/' && currentNav === 'center' ? 'text-black' : 'text-gray-600 font-[500]'}
         `}>
           Customer Center
         </div>
@@ -60,9 +70,10 @@ const Gnb = () => {
               onClick={() => {
                 setCurrentNav('home');
                 setIsMenuOpen(false);
+                router.replace('/');
               }}
               className={`py-2 text-2xl cursor-pointer font-[900]
-              ${currentNav === 'home' ? 'text-black' : 'text-gray-400 font-[600]'}
+              ${pathname === '/' && currentNav === 'home' ? 'text-black' : 'text-gray-400 font-[600]'}
             `}>
               Home
             </div>
@@ -70,9 +81,10 @@ const Gnb = () => {
               onClick={() => {
                 setCurrentNav('company');
                 setIsMenuOpen(false);
+                router.replace('/');
               }}
               className={`py-2 text-2xl cursor-pointer font-[900]
-              ${currentNav === 'company' ? 'text-black ' : 'text-gray-400 font-[600]'}
+              ${pathname === '/' && currentNav === 'company' ? 'text-black ' : 'text-gray-400 font-[600]'}
             `}>
               Company
             </div>
@@ -80,9 +92,10 @@ const Gnb = () => {
               onClick={() => {
                 setCurrentNav('center');
                 setIsMenuOpen(false);
+                router.replace('/');
               }}
               className={`py-2 text-2xl cursor-pointer font-[900]
-              ${currentNav === 'center' ? 'text-black ' : 'text-gray-400 font-[600]'}
+              ${pathname === '/' && currentNav === 'center' ? 'text-black ' : 'text-gray-400 font-[600]'}
             `}>
               Customer
             </div>
