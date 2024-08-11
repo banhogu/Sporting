@@ -75,7 +75,7 @@ const First = () => {
           alt="Background"
           layout="fill"
           objectFit="cover"
-          quality={100}
+          quality={70}
           priority
         />
       </div>

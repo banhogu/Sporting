@@ -1,5 +1,6 @@
 'use client';
 import { useNavStore } from '@/store/nav.store';
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
@@ -13,7 +14,13 @@ const Gnb = () => {
   return (
     <div className="fixed z-[9998] bg-white top-0 w-full h-[66px] sm:h-[76px] flex items-center justify-between px-3 py-1 shadow-md sm:px-6 sm:py-4">
       <div onClick={() => router.push('/')} className="cursor-pointer">
-        <img src="/images/logo.svg" alt="logo" className="w-[130px] sm:w-full" />
+        <Image
+          src="/images/logo.svg"
+          alt="logo"
+          width={147}
+          height={27}
+          className="w-[130px] sm:w-full"
+        />
       </div>
 
       {/* Desktop Menu */}
