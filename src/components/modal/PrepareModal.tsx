@@ -3,6 +3,7 @@ import { useModalStore } from '@/store/modal.store';
 import React, { useRef } from 'react';
 import useOnClickOutside from '@/hook/useOnClickOutside';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 /**
  * 준비중 컨텐츠가 나오는 모달입니다.
@@ -28,7 +29,14 @@ const PrepareModal = () => {
           <div className="px-6 py-[28px] bg-white rounded-[12px]">
             <div className="w-[312px] mx-auto">
               <div className="flex justify-center">
-                <img src="/images/logo.svg" alt="" className="w-[200px]" />
+                <Image
+                  src="/images/logo.svg"
+                  alt=""
+                  className="w-[200px]"
+                  width={200}
+                  height={36}
+                  priority={true}
+                />
               </div>
               <div className="mt-5 text-[22px] font-bold text-gray-800 flex justify-center">
                 아직 서비스가 준비중이에요
