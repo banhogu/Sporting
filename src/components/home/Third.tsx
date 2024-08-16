@@ -1,7 +1,7 @@
 'use client';
 import { BouncySectionType } from '@/types/section.type';
 import { motion, useInView } from 'framer-motion';
-import React, { ReactNode, useRef } from 'react';
+import React, { useRef } from 'react';
 
 const BouncySection2 = ({ children, delay = 0, direction = 'up' }: BouncySectionType) => {
   const ref = useRef(null);

@@ -6,6 +6,7 @@ import Image from 'next/image';
 
 const Top = () => {
   const { setModalType, setOpen } = useModalStore();
+
   return (
     <div className="relative">
       <img
@@ -45,6 +46,7 @@ const Top = () => {
       </div>
 
       <div className="px-4 flex justify-center items-center gap-[30px] mt-[22px] sm:px-0 sm:mt-[52px]">
+        {/* 앱스토어 클릭시 준비중 모달 렌더링 */}
         <div
           onClick={() => {
             setOpen(true);
@@ -56,7 +58,7 @@ const Top = () => {
           </div>
           <div>App Store</div>
         </div>
-
+        {/* 앱스토어 클릭시 준비중 모달 렌더링 */}
         <div
           onClick={() => {
             setOpen(true);

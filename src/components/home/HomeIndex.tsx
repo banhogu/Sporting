@@ -6,10 +6,16 @@ import { useModalStore } from '@/store/modal.store';
 import { disablePageScroll, enablePageScroll } from 'scroll-lock';
 import ToTop from '../common/ToTop';
 
+/**
+ * dynamic import
+ */
 const Second = dynamic(() => import('./Second'), { ssr: false });
 const Third = dynamic(() => import('./Third'), { ssr: false });
 const Fourth = dynamic(() => import('./Fourth'), { ssr: false });
 
+/**
+ * 스크롤 이벤트에 debounce를 적용하여 불필요한 이벤트를 감소
+ */
 const debounce = (func, wait) => {
   let timeout;
   return function (...args) {

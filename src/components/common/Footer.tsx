@@ -7,9 +7,14 @@ import Link from 'next/link';
 import { useNavStore } from '@/store/nav.store';
 
 const Footer = () => {
+  /**
+   * 하단 nav바 클릭 시 카테고리가 이동됩니다.
+   */
   const { setCurrentNav } = useNavStore();
+
   return (
     <div>
+      {/* 레이아웃을 고려해 xl 이하에서는 hidden */}
       <div className="hidden xl:flex border-t-2 border-gray-200 py-[70px] px-[100px] gap-[220px] justify-center">
         <div className="flex flex-col gap-6 items-center">
           <div>

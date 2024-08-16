@@ -1,5 +1,9 @@
 import { create } from 'zustand';
 
+/**
+ * 모달의 열림 여부와 종류를 지정합니다.
+ */
+
 interface useModalStoreType {
   open: boolean;
   /* eslint-disable no-unused-vars */

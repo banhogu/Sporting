@@ -2,6 +2,11 @@
 import React from 'react';
 import { BiSolidToTop } from 'react-icons/bi';
 
+/**
+ * y - 1500px 이상일 시 ToTop렌더링.
+ * 클릭시 맨위로 스크롤
+ */
+
 const ToTop = () => {
   const handleClick = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });

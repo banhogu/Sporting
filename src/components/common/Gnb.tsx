@@ -6,14 +6,14 @@ import React, { useState, useEffect } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 
 const Gnb = () => {
-  const { currentNav, setCurrentNav } = useNavStore();
   const router = useRouter();
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
+  const { currentNav, setCurrentNav } = useNavStore(); //현재 카테고리
+  const [isMenuOpen, setIsMenuOpen] = useState(false); //모바일 메뉴 열림상태
   const [isNavVisible, setIsNavVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
-  const handleMenuToggle = () => setIsMenuOpen((prev) => !prev);
+  const handleMenuToggle = () => setIsMenuOpen((prev) => !prev); //모바일 메뉴 열림 변경 함수
 
   const controlNavbar = () => {
     if (typeof window !== 'undefined') {

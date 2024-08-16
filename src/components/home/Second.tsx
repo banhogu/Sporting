@@ -1,5 +1,5 @@
 'use client';
-import React, { ReactNode, useRef } from 'react';
+import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { SectionType } from '@/types/section.type';
 

@@ -1,7 +1,7 @@
 'use client';
 import { SectionType } from '@/types/section.type';
 import { motion, useInView } from 'framer-motion';
-import React, { ReactNode, useRef } from 'react';
+import React, { useRef } from 'react';
 
 const Section = ({ children, delay = 0 }: SectionType) => {
   const ref = useRef(null);
